@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hasout | Task</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/hasout.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="../js/hasout.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="container" ng-app="myApp" ng-controller="myCtrl">
+		  	<div class="row">
+			  	<div class="col-xs-12 pv-12 ph-0 search-header"> 
+	  				{{totalResults}} Results
+			  	</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 border-bottom pb-30 ph-0">
+					<form>
+					  	<div class="form-group has-feedback">
+						  	<input type="text" class="form-control" id="searchString" placeholder="Citrix Recivee" ng-keypress="pressEnter($event)" ng-model="getValueFromInput">
+						  	<span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</form>
+				</div>
+				<div class="col-xs-12 content-body">
+					<div class="row pv-12" ng-repeat="eachItem in allList">
+						<div class="col-xs-12 ph-0 heading">{{eachItem.title}}</div>
+						<div class="col-xs-12 ph-0 link">{{eachItem.link}}</div>
+						<div class="col-xs-12 ph-0 pv-6 snippet">{{eachItem.htmlSnippet}}</div>
+						<div class="col-xs-12 ph-0 product" ng-if="eachItem.pagemap && eachItem.pagemap.metatags.length > 0">
+							[<span ng-repeat="item in eachItem.pagemap.metatags">
+								<span ng-if="!$first">,</span>
+								{{item.ctx_product}} 
+							</span>]
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

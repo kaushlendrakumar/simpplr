@@ -1,0 +1,60 @@
+@import 'reset';
+@import 'variable';
+
+/*Padding helpers*/
+@for $i from 0 through 100 {
+	.p-#{$i * 1} {
+        padding: #{($i * 1) + 'px'}!important;
+    }
+	.pt-#{$i * 1} {
+        padding-top: #{($i * 1) + 'px'}!important;
+    }
+	.pr-#{$i * 1} {
+        padding-right: #{($i * 1) + 'px'}!important;
+    }
+	.pb-#{$i * 1} {
+        padding-bottom: #{($i * 1) + 'px'}!important;
+    }
+	.pl-#{$i * 1} {
+        padding-left: #{($i * 1) + 'px'}!important;
+    }
+	.ph-#{$i * 1} {
+        padding-left: #{($i * 1) + 'px'}!important;
+        padding-right: #{($i * 1) + 'px'}!important;
+    }
+	.pv-#{$i * 1} {
+        padding-top: #{($i * 1) + 'px'}!important;
+        padding-bottom: #{($i * 1) + 'px'}!important;
+    }
+}
+
+body{
+	.search-header{
+		font-weight: 600;
+		font-size: 16px;
+	}
+	input{
+		border-radius: 0px !important;
+	}
+	.border-bottom{
+		border-bottom: 1px solid silver;
+	}
+	.content-body{
+		.heading{
+			color: blue;
+			font-size: 16px;
+			text-transform: capitalize;
+		}
+		.link{
+			color: silver;
+			font-size: 12px;
+		}
+		.snippet{
+
+		}
+		.product{
+			color: silver;
+		}
+	}
+}
+
